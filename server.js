@@ -6,11 +6,16 @@ const port = process.env.PORT || 3001
 
 const morgan = require('morgan');
 
-
 const app = express();
+
+//Middleware
 
 app.use(cors());
 app.use(express.json());
+
+if (process.env.NODE_ENV === 'production') {
+
+}
 
 //Get all Restaurants
 
@@ -116,7 +121,6 @@ app.post('/api/v1/restaurants/:id/addReview', async (req, res) => {
     console.log(err);
   }
 })
-
 
 app.listen(port, () => {
     console.log(`Server is up and listening on port ${port}`);
