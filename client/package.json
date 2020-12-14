@@ -36,5 +36,9 @@
     ]
   },
   "proxy": "http://localhost:3001",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10"
+  }
 }
