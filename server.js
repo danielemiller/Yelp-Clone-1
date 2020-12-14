@@ -123,6 +123,10 @@ app.post('/api/v1/restaurants/:id/addReview', async (req, res) => {
   }
 })
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build/index.html"));
+})
+
 app.listen(port, () => {
     console.log(`Server is up and listening on port ${port}`);
 });
