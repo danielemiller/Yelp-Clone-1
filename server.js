@@ -2,7 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const db = require('./db') ;
-const port = process.env.PORT || 3001
+const path = require('path');
+const port = process.env.PORT || 3001;
 
 const morgan = require('morgan');
 
@@ -14,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 if (process.env.NODE_ENV === 'production') {
-
+  app.use(express.static(path.join(__dirname, 'client/build')))
 }
 
 //Get all Restaurants
