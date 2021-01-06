@@ -24,7 +24,7 @@ const AddRestaurant = () => {
 
     return (
         <div className='mb-4'>
-          <form action="">
+          <form action='/api/v1/restaurants' method='POST'>
             <div className="form-row">
                 <div className="col">
                   <input value={name} onChange={e => setName(e.target.value)} type="text" className="form-control" placeholder="name"/>
